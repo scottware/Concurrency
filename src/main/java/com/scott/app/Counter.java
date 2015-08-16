@@ -1,3 +1,5 @@
+package com.scott.app;
+
 public class Counter {
 	int i = 0;
 

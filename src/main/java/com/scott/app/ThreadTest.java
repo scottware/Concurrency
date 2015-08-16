@@ -1,3 +1,5 @@
+package com.scott.app;
+
 public class ThreadTest implements Runnable {
 
 	Counter counter;
