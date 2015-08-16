@@ -1,6 +1,12 @@
-public class Counter implements Runnable {
-    public void run() {
-        System.out.println("Hello from a thread!");
-    }
+public class Counter {
+	int i = 0;
+
+	public int getCount() {
+		return i;
+	}
+
+	public void increment() {
+		i++;
+	}
 
 }
