@@ -12,7 +12,8 @@ public class ThreadTest implements Runnable {
 		long startTime = System.currentTimeMillis(); // Get the start Time
 		while (counter.getCount() < 1000) {
 			counter.increment();
-			System.out.println(Integer.toString(counter.getCount()));
+			counter.atomicIncrement();
+			System.out.println(Integer.toString(counter.getCount()) + "  " +counter.getAtomicCount());
 		}
 		long endTime = System.currentTimeMillis(); // Get the end Time
 		long delta = endTime - startTime;
