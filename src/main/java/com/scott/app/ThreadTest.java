@@ -9,14 +9,14 @@ public class ThreadTest implements Runnable {
 	}
 
 	public void run() {
-	        long startTime = System.currentTimeMillis(); // Get the start Time
-		while(counter.getCount() < 1000 ) {
+		long startTime = System.currentTimeMillis(); // Get the start Time
+		while (counter.getCount() < 1000) {
 			counter.increment();
-			System.out.println( Integer.toString(counter.getCount()) );
+			System.out.println(Integer.toString(counter.getCount()));
 		}
-	        long endTime = System.currentTimeMillis(); // Get the end Time
+		long endTime = System.currentTimeMillis(); // Get the end Time
 		long delta = endTime - startTime;
-		System.out.println( "Total time: " + Long.toString(delta) );
-    	}
+		System.out.println("Total time: " + Long.toString(delta));
+	}
 
 }
