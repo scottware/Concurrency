@@ -9,15 +9,9 @@ public class Concurrency {
 		Thread c = new Thread(new ThreadTest(atomicCounter));
 		Thread d = new Thread(new ThreadTest(atomicCounter));
 
-		long startTime = System.currentTimeMillis(); // Get the start Time
-
 		a.start();
 		b.start();
 		c.start();
 		d.start();
-
-		long endTime = System.currentTimeMillis(); // Get the end Time
-		long delta = endTime - startTime;
-		// System.out.println("time: " + Long.toString(delta));
 	}
 }
