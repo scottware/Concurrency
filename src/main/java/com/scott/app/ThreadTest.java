@@ -2,22 +2,23 @@ package com.scott.app;
 
 public class ThreadTest implements Runnable {
 
-	Counter counter;
+	ICounter counter;
 
-	public ThreadTest(Counter c) {
+	public ThreadTest(ICounter c) {
 		this.counter = c;
 	}
 
 	public void run() {
 		long startTime = System.currentTimeMillis(); // Get the start Time
-		while (counter.getCount() < 1000) {
-			counter.increment();
-			counter.atomicIncrement();
-			System.out.println(Integer.toString(counter.getCount()) + "  " +counter.getAtomicCount());
+		synchronized (counter) {
+			while (counter.getCount() < 10000000) {
+				counter.increment();
+				//System.out.println(counter.getType() + " " + Integer.toString(counter.getCount()));
+			}
 		}
 		long endTime = System.currentTimeMillis(); // Get the end Time
 		long delta = endTime - startTime;
-		System.out.println("Total time: " + Long.toString(delta));
+		System.out.println("Total time for " + counter.getType() + ": " + Long.toString(delta));
 	}
 
 }

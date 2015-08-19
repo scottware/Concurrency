@@ -1,25 +1,17 @@
 package com.scott.app;
 
-import java.util.concurrent.atomic.*;
-
-
-public class Counter {
+public class Counter implements ICounter {
 	int i = 0;
-	AtomicInteger atomicI = new AtomicInteger();
 
 	public int getCount() {
 		return i;
 	}
-	public AtomicInteger getAtomicCount() {
-			return atomicI;
-	}
-	
+
 	public void increment() {
 		i++;
 	}
-
-	public void atomicIncrement() {
-		atomicI.incrementAndGet();
+	
+	public String getType() {
+		return "Counter";
 	}
-
 }
