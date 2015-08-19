@@ -13,7 +13,8 @@ public class ThreadTest implements Runnable {
 		synchronized (counter) {
 			while (counter.getCount() < 10000000) {
 				counter.increment();
-				//System.out.println(counter.getType() + " " + Integer.toString(counter.getCount()));
+				// System.out.println(counter.getType() + " " +
+				// Integer.toString(counter.getCount()));
 			}
 		}
 		long endTime = System.currentTimeMillis(); // Get the end Time
