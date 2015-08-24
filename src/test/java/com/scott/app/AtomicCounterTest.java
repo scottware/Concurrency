@@ -6,14 +6,13 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
-public class CounterTests extends TestCase {
+public class AtomicCounterTest extends TestCase {
 
 	@Test
 	public void testGetType() {
-		Counter counter = new Counter();
+		AtomicCounter counter = new AtomicCounter();
 		String type = counter.getType();
-		assertEquals(type, "Counter");
-		//assertTrue(true);
+		assertEquals(type, "AtomicCounter");
 	}
 
 }
